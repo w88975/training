@@ -1,0 +1,42 @@
+<polymer-element name="Data-test" >
+	<template>
+		<li><input type="text" value="{{Name}}"  > {{value}}</li>
+		<button >{{Name}}</button>
+		<hr/>
+		<template repeat="{{ s in salutations}}">
+			<ul>
+			<li>{{s.what}}={{s.who}}</li>
+			</ul>
+		</template>
+		<template bind="{{items}}">
+			<p>集合数量为：{{length}}</p>
+			<ul>
+			<template repeat>
+			<li>{{name}}</li>
+			</template>
+			</ul>
+		</template>
+		<hr/>
+		我的名字是{{MyName}} <input type="text" value="{{MyName}}">
+	</template>
+	<script>
+		Polymer('Data-test',{
+			ready: function(){
+				this.Name="I'm Name";
+				this.value="I'm Value";
+				this.salutations = [
+				  {what: 'Hello', who: 'World'},
+				  {what: 'GoodBye', who: 'DOM APIs'},
+				  {what: 'Hello', who: 'Declarative'},
+				  {what: 'GoodBye', who: 'Imperative'}
+				];
+				this.items = [
+				  {name: "Milk"},
+				  {name: "Bread"},
+				  {name: "Cereal"}
+				];
+			}
+		});
+		
+	</script>
+</polymer-element>
