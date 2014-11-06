@@ -1,0 +1,21 @@
+﻿<polymer-element name="foo-bar" >
+    <template>
+        foobar = {{value.data.x}}, {{value.data.y}}
+    </template>
+
+    <script>
+        Polymer({
+            publish: {
+                value: { data: { x: 0, y: 0 } }
+            },
+
+            observe: {
+                'value.data': 'valueChanged',
+            },
+
+            valueChanged: function () {
+                console.log("value changed");
+            },
+        });
+    </script>
+</polymer-element>

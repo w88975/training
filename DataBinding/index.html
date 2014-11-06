@@ -10,8 +10,35 @@
 	<script src="../components/platform/platform.js"></script>
 	<link rel="import" href="../components/polymer/polymer.html"> 
 	<link rel="import" href="Data.html">
+	<link rel="import" href="question5.html">
 </head>
 <body unresolved>
-	<Data-test></Data-test>
+	
+	
+ <template id="my-template" is="auto-binding">
+        <foo-bar value={{foo}}></foo-bar>
+        <button on-click="{{clickAction}}">change</button>
+    </template>
+
+    <script>
+    var tmpl = document.querySelector('#my-template');
+    tmpl.foo = { x_: 10, y_: 20 };
+    Object.defineProperty(tmpl.foo, 'data', {
+        get: function () {
+            return { x: this.x_, y: this.y_ };
+        },
+        set: function (value) {
+            this.x_ = value.x;
+            this.y_ = value.y;
+        }
+    });
+
+    tmpl.clickAction = function ( event ) {
+        tmpl.foo.data = { x: 50, y: 100 };
+    }
+    </script>
+
+
+
 </body>
 </html>

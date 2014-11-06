@@ -1,0 +1,22 @@
+<polymer-element name="test-demo">
+     <template>
+{{foo}}
+    </template>
+    <script>
+    Polymer('test-demo', {
+    foo: '',
+    bar: '',
+    observe: {
+      foo: 'validate',
+      bar: 'validate'
+    },
+    ready: function() {
+      this.foo = 'bar';
+      this.bar = 'foo';
+    },
+    validate: function(oldValue, newValue) {
+      console.log("test-demo");
+    },
+});
+    </script>
+</polymer-element>

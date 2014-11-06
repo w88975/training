@@ -1,0 +1,24 @@
+﻿<polymer-element name="foo-bar4" >
+    <template>
+        {{value.name}} = {{value.data._x}}, {{value.data._y}}
+    </template>
+
+    <script>
+        Polymer('foo-bar4',{
+            
+            publish: {
+                value: { data: {_x: 0, _y: 0}, name: 'no name' }
+            },
+			observe:{
+				'value.data._x': 'validate',
+                'value.data._y': 'validate'
+			},
+            valueChanged: function () {
+                console.log("value changed4");
+            },
+			validate: function (oldValue, newValue){
+				console.log("test");
+			}
+        });
+    </script>
+</polymer-element>
