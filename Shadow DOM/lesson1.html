@@ -1,0 +1,29 @@
+﻿<div><h3>Light DOM</h3></div>
+<h3>No Shadow DOM Style </h3>
+<span>tip:第二个h3不受第一个h3的shadow DOM style影响</span>
+<script>
+var root = document.querySelector('div').createShadowRoot();
+root.innerHTML = '<style>h3{ color: red; }</style>' +
+                 '<h3>Shadow DOM</h3>';
+</script>
+
+<hr/>
+<button class="red">this Button hava a style of "margin-top:100px" </button>
+<script>
+var button = document.querySelector('button');
+var root = button.createShadowRoot();
+root.innerHTML = '<style>' +
+    ':host { margin-top: 100px; }' +
+    '</style>' +
+    '<content></content>';
+</script>
+
+<h2>test content </h2>
+<script>
+var h2 = document.querySelector('h2');
+var root = h2.createShadowRoot();
+root.innerHTML = '<style>' +
+    ':host { margin-top: 100px; }' +
+    '</style>' +
+    '<content></content>';
+</script>
