@@ -1,0 +1,30 @@
+<polymer-element name="x-button" noscript>
+  <template>
+    <style>
+      :host {
+        opacity: 0.5;
+        transition: opacity 400ms ease-in-out;
+      }
+      :host(:hover) { opacity: 1; }
+     
+  :unresolved {
+    display: flex;
+    justify-content: center;
+    background: rgba(255,255,255,0.5);
+    border: 1px dashed #ccc;
+    border-radius: 5px;
+  }
+  :unresolved:after {
+    padding: 15px;
+    content: 'loading...';
+    color: #ccc;
+  }
+
+    </style>
+    <span style="width:100px;height:100px;background:red;">
+		<button>
+			<content></content>
+		</button>
+	</span>
+  </template>
+</polymer-element>

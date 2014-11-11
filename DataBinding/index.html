@@ -9,18 +9,30 @@
   content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 	<script src="../components/platform/platform.js"></script>
 	<link rel="import" href="../components/polymer/polymer.html"> 
-	<link rel="import" href="host.html">
-	<link rel="import" href="question5.html">
+	<link rel="import" href="attributes.html">
+	<link rel="import" href="data.html">
 </head>
+<style>
+	  :unresolved {
+    display: flex;
+    justify-content: center;
+    background: rgba(255,255,255,0.5);
+    border: 1px dashed #ccc;
+    border-radius: 5px;
+  }
+  :unresolved:after {
+    padding: 15px;
+    content: 'loading...';
+    color: #ccc;
+  }
+</style>
 <body unresolved>
 	
 	
 <body>
  <div >
-  <x-foo class="diffrent"></x-foo>
+  <x-button>testtesttesttesttesttesttesttesttest</x-button>
   </div>
 </body>
 
-
-</body>
 </html>

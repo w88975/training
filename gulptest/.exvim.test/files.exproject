@@ -1,0 +1,24 @@
+" Press <F1> for help
+
+-[F]gulptest {
+ |-[F]bin {
+ | |-index.html }
+ |
+ |-[F]dist {
+ | |-all.min.js
+ | |-test.gulp.all.min.js }
+ |
+ |-[F]imports {
+ | |-index.html
+ | |-template1.html
+ | |-template2.html }
+ |
+ |-[F]js {
+ | |-all.min.js
+ | |-js.js
+ | |-test.js }
+ |
+ |-gulpfile.js
+ |-test.exvim }
+
+
